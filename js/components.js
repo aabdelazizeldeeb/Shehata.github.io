@@ -17,21 +17,10 @@ export function renderManBehindMemories() {
     const images = siteData.images.filter(img => img.category === 'mohammed' && img.id !== 'm-hero');
     
     images.forEach((img, index) => {
-        const wrapper = document.createElement('div');
-        // Varying sizes for editorial look
-        let colSpan = index % 3 === 0 ? 'span 8' : 'span 4';
-        if (index % 4 === 0) colSpan = 'span 12';
-        
-        wrapper.style.gridColumn = colSpan;
-        wrapper.className = 'img-wrapper fade-up';
-        
-        // Add parallax effect via data attribute for GSAP
-        wrapper.dataset.speed = (Math.random() * 0.2 + 0.9).toFixed(2);
-        
-        wrapper.innerHTML = `
-            <img src="${img.url}" alt="Mohammed" loading="lazy" class="lightbox-trigger" data-id="${img.id}" onload="this.classList.add('loaded')">
-        `;
-        grid.appendChild(wrapper);
+        const item = document.createElement('div');
+        item.className = 'masonry-item fade-up';
+        item.innerHTML = `<img src="${img.url}" alt="Mohammed" loading="lazy" class="lightbox-trigger" data-id="${img.id}" onload="this.classList.add('loaded')">`;
+        grid.appendChild(item);
     });
 }
 
@@ -60,22 +49,13 @@ export function renderOurMemories() {
     });
     
     images.forEach((img, index) => {
-        const wrapper = document.createElement('div');
-        const isLarge = index % 2 === 0;
-        wrapper.style.gridColumn = isLarge ? 'span 7' : 'span 5';
-        
-        // Push odd items down for asymmetrical look
-        if (!isLarge) wrapper.style.marginTop = '4rem';
-        
-        wrapper.className = 'fade-up';
-        
-        wrapper.innerHTML = `
-            <div class="img-wrapper">
-                <img src="${img.url}" alt="Us" loading="lazy" class="lightbox-trigger" data-id="${img.id}" onload="this.classList.add('loaded')">
-            </div>
-            ${img.caption ? `<p class="subtitle mt-2" style="font-size: 0.875rem;">${img.caption}</p>` : ''}
+        const item = document.createElement('div');
+        item.className = 'masonry-item fade-up';
+        item.innerHTML = `
+            <img src="${img.url}" alt="Us" loading="lazy" class="lightbox-trigger" data-id="${img.id}" onload="this.classList.add('loaded')">
+            ${img.caption ? `<p class="subtitle mt-2" style="font-size: 0.875rem; text-align: center;">${img.caption}</p>` : ''}
         `;
-        grid.appendChild(wrapper);
+        grid.appendChild(item);
     });
 }
 
@@ -115,16 +95,15 @@ export function renderGoodTimes() {
     const images = siteData.images.filter(img => img.category === 'us').slice(0, 4);
     
     images.forEach((img, index) => {
-        const wrapper = document.createElement('div');
-        wrapper.style.gridColumn = 'span 6';
-        wrapper.className = 'img-wrapper fade-up';
+        const item = document.createElement('div');
+        item.className = 'masonry-item fade-up';
         
         // Add slight rotation for playful feel
         const rotation = (index % 2 === 0 ? 2 : -2) + 'deg';
-        wrapper.style.transform = `rotate(${rotation})`;
+        item.style.transform = `rotate(${rotation})`;
         
-        wrapper.innerHTML = `<img src="${img.url}" alt="Good Times" loading="lazy" class="lightbox-trigger" data-id="${img.id}" onload="this.classList.add('loaded')">`;
-        grid.appendChild(wrapper);
+        item.innerHTML = `<img src="${img.url}" alt="Good Times" loading="lazy" class="lightbox-trigger" data-id="${img.id}" onload="this.classList.add('loaded')">`;
+        grid.appendChild(item);
     });
 }
 
