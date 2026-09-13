@@ -23,7 +23,7 @@ export function renderHero() {
 export function renderManBehindMemories() {
     const grid = document.getElementById('man-grid');
     const images = siteData.images.filter(img => img.category === 'mohammed' && img.id !== 'm-hero');
-    
+
     images.forEach((img, index) => {
         const item = document.createElement('div');
         item.className = 'masonry-item fade-up';
@@ -46,16 +46,8 @@ export function renderOurStory() {
 
 export function renderOurMemories() {
     const grid = document.getElementById('memories-grid');
-    // Skip the first 'featured' one which is used in Our Story
-    let skippedFirst = false;
-    const images = siteData.images.filter(img => {
-        if (img.category === 'us' && img.featured && !skippedFirst) {
-            skippedFirst = true;
-            return false;
-        }
-        return img.category === 'us';
-    });
-    
+    const images = siteData.images.filter(img => img.category === 'memories');
+
     images.forEach((img, index) => {
         const item = document.createElement('div');
         item.className = 'masonry-item fade-up';
@@ -69,9 +61,9 @@ export function renderOurMemories() {
 
 export function renderMasonryWall() {
     const grid = document.getElementById('masonry-wall');
-    // Mix all images for the wall
-    const allImages = [...siteData.images].sort(() => 0.5 - Math.random());
-    
+    // Use 'featured' images to avoid repetition
+    const allImages = siteData.images.filter(img => img.category === 'featured').sort(() => 0.5 - Math.random());
+
     allImages.forEach(img => {
         const item = document.createElement('div');
         item.className = 'masonry-item fade-up';
@@ -99,17 +91,17 @@ export function renderVideos() {
 
 export function renderGoodTimes() {
     const grid = document.getElementById('good-times-grid');
-    // Just pick some random images to fill
-    const images = siteData.images.filter(img => img.category === 'us').slice(0, 4);
-    
+    // Use 'us' images, skipping the first one used in the opening
+    const images = siteData.images.filter(img => img.category === 'us').slice(1);
+
     images.forEach((img, index) => {
         const item = document.createElement('div');
         item.className = 'masonry-item fade-up';
-        
+
         // Add slight rotation for playful feel
         const rotation = (index % 2 === 0 ? 2 : -2) + 'deg';
         item.style.transform = `rotate(${rotation})`;
-        
+
         item.innerHTML = `<img src="${img.url}" alt="Good Times" loading="lazy" class="lightbox-trigger" data-id="${img.id}" onload="this.classList.add('loaded')">`;
         grid.appendChild(item);
     });
@@ -121,14 +113,14 @@ let lightboxImages = [];
 
 export function initLightbox() {
     lightboxImages = siteData.images; // Use all images for easy navigation
-    
+
     const lightbox = document.getElementById('lightbox');
     const lbImg = document.getElementById('lb-img');
     const lbCap = document.getElementById('lb-cap');
     const closeBtn = document.getElementById('lb-close');
     const prevBtn = document.getElementById('lb-prev');
     const nextBtn = document.getElementById('lb-next');
-    
+
     // Attach click to all trigger images
     document.addEventListener('click', (e) => {
         if (e.target.classList.contains('lightbox-trigger')) {
@@ -229,7 +221,7 @@ export function initVideoModal() {
     };
 
     closeBtn.addEventListener('click', closeVideo);
-    
+
     // Keyboard close
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && modal.classList.contains('active')) closeVideo();
@@ -241,7 +233,7 @@ export function initMusic() {
     const audio = document.getElementById('bg-audio');
     const control = document.getElementById('music-control');
     const icon = control.querySelector('.icon');
-    
+
     audio.src = siteData.audio.url;
     audio.volume = 0.5;
 

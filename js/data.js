@@ -90,24 +90,24 @@ export const siteData = {
         },
 
         // Category 2 - Memories
-        { id: "mem-1", url: "assets/images/memories/IMG20250821202122.webp", category: "us", featured: false, title: "", caption: "" },
-        { id: "mem-2", url: "assets/images/memories/IMG20250821202343.webp", category: "us", featured: false, title: "", caption: "" },
-        { id: "mem-3", url: "assets/images/memories/IMG20250821213427.webp", category: "us", featured: false, title: "", caption: "" },
-        { id: "mem-4", url: "assets/images/memories/IMG20260101202609.webp", category: "us", featured: false, title: "", caption: "" },
-        { id: "mem-5", url: "assets/images/memories/IMG20260101202612.webp", category: "us", featured: false, title: "", caption: "We definitely need more moments like this." },
-        { id: "mem-6", url: "assets/images/memories/IMG20260101202643.webp", category: "us", featured: false, title: "", caption: "" },
-        { id: "mem-7", url: "assets/images/memories/IMG20260101202649.webp", category: "us", featured: false, title: "", caption: "" },
-        { id: "mem-8", url: "assets/images/memories/IMG20260101202651.webp", category: "us", featured: false, title: "", caption: "" },
+        { id: "mem-1", url: "assets/images/memories/IMG20250821202122.webp", category: "memories", featured: false, title: "", caption: "" },
+        { id: "mem-2", url: "assets/images/memories/IMG20250821202343.webp", category: "memories", featured: false, title: "", caption: "" },
+        { id: "mem-3", url: "assets/images/memories/IMG20250821213427.webp", category: "memories", featured: false, title: "", caption: "" },
+        { id: "mem-4", url: "assets/images/memories/IMG20260101202609.webp", category: "memories", featured: false, title: "", caption: "" },
+        { id: "mem-5", url: "assets/images/memories/IMG20260101202612.webp", category: "memories", featured: false, title: "", caption: "We definitely need more moments like this." },
+        { id: "mem-6", url: "assets/images/memories/IMG20260101202643.webp", category: "memories", featured: false, title: "", caption: "" },
+        { id: "mem-7", url: "assets/images/memories/IMG20260101202649.webp", category: "memories", featured: false, title: "", caption: "" },
+        { id: "mem-8", url: "assets/images/memories/IMG20260101202651.webp", category: "memories", featured: false, title: "", caption: "" },
 
         // Category 2 - Featured
-        { id: "feat-1", url: "assets/images/featured/IMG20260622180120.webp", category: "us", featured: false, title: "", caption: "" },
-        { id: "feat-2", url: "assets/images/featured/IMG20260622180122.webp", category: "us", featured: false, title: "", caption: "" },
-        { id: "feat-3", url: "assets/images/featured/IMG20260622180126.webp", category: "us", featured: false, title: "", caption: "" },
-        { id: "feat-4", url: "assets/images/featured/IMG20260622212432.webp", category: "us", featured: false, title: "", caption: "" },
-        { id: "feat-5", url: "assets/images/featured/IMG20260622212439.webp", category: "us", featured: false, title: "", caption: "" },
-        { id: "feat-6", url: "assets/images/featured/IMG20260622212755.webp", category: "us", featured: false, title: "", caption: "" },
-        { id: "feat-7", url: "assets/images/featured/IMG20260622212759.webp", category: "us", featured: false, title: "", caption: "" },
-        { id: "feat-8", url: "assets/images/featured/IMG20260622212804.webp", category: "us", featured: false, title: "", caption: "" }
+        { id: "feat-1", url: "assets/images/featured/IMG20260622180120.webp", category: "featured", featured: false, title: "", caption: "" },
+        { id: "feat-2", url: "assets/images/featured/IMG20260622180122.webp", category: "featured", featured: false, title: "", caption: "" },
+        { id: "feat-3", url: "assets/images/featured/IMG20260622180126.webp", category: "featured", featured: false, title: "", caption: "" },
+        { id: "feat-4", url: "assets/images/featured/IMG20260622212432.webp", category: "featured", featured: false, title: "", caption: "" },
+        { id: "feat-5", url: "assets/images/featured/IMG20260622212439.webp", category: "featured", featured: false, title: "", caption: "" },
+        { id: "feat-6", url: "assets/images/featured/IMG20260622212755.webp", category: "featured", featured: false, title: "", caption: "" },
+        { id: "feat-7", url: "assets/images/featured/IMG20260622212759.webp", category: "featured", featured: false, title: "", caption: "" },
+        { id: "feat-8", url: "assets/images/featured/IMG20260622212804.webp", category: "featured", featured: false, title: "", caption: "" }
     ],
     videos: [], // Removed as requested
     audio: {
