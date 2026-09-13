@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 38th Birthday, Mohammed 🎂</title>
+    <meta name="description" content="A cinematic collection of memories, moments and stories celebrating Mohammed Shehata's 38th birthday.">
+    
+    <!-- Open Graph Metadata -->
+    <meta property="og:title" content="Happy 38th Birthday, Mohammed 🎂">
+    <meta property="og:description" content="A cinematic collection of memories, moments and stories celebrating Mohammed Shehata's 38th birthday.">
+    <meta property="og:type" content="website">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Canvas Confetti -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+    <!-- Audio Element -->
+    <audio id="bg-audio" loop>
+        <!-- Source is set in JS -->
+    </audio>
+
+    <!-- Global Music Control -->
+    <div id="music-control" title="Toggle Music">
+        <span class="icon">♫</span>
+    </div>
+
+    <!-- 01 - Cinematic Opening -->
+    <section id="section-opening">
+        <div class="opening-text-container">
+            <h3 class="subtitle opening-text" id="op-1">13 • 09 • 1988</h3>
+            <h2 class="title-medium opening-text" id="op-2">A special person was born.</h2>
+            <h1 class="title-large opening-text" id="op-3">MOHAMMED SHEHATA</h1>
+            <h2 class="title-medium opening-text" id="op-4">38 YEARS OF STORIES</h2>
+            <h2 class="title-medium opening-text" id="op-5">COUNTLESS MEMORIES</h2>
+            <button id="enter-btn" class="btn">ENTER THE STORY</button>
+        </div>
+    </section>
+
+    <div id="main-content" style="display: none;">
+        
+        <!-- 02 - Hero Section -->
+        <section id="section-hero">
+            <div class="hero-bg img-wrapper">
+                <img id="hero-img" src="" alt="Mohammed Shehata" loading="lazy">
+            </div>
+            <div class="hero-gradient"></div>
+            <div class="hero-content">
+                <h3 class="subtitle">HAPPY BIRTHDAY</h3>
+                <h1 class="title-huge text-accent">MOHAMMED</h1>
+                <h2 class="title-large">38</h2>
+                <p class="subtitle mt-2">September 13, 1988 — September 13, 2026</p>
+                <p class="text-body mt-4">A story worth remembering.</p>
+            </div>
+            <div class="scroll-indicator">
+                <span class="subtitle" style="font-size: 0.75rem;">SCROLL TO BEGIN</span>
+                <div class="scroll-line"></div>
+            </div>
+        </section>
+
+        <!-- 03 - The Man Behind the Memories -->
+        <section id="section-man">
+            <div class="container text-center">
+                <h1 class="title-large mb-4">THE MAN BEHIND THE MEMORIES</h1>
+                <p class="text-body mx-auto mb-5">38 years.<br>A lot of stories.<br>And somehow, even more memories.</p>
+                <div class="editorial-grid" id="man-grid">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 04 - The Story So Far -->
+        <section id="section-story" style="background-color: var(--bg-secondary);">
+            <div class="container text-center">
+                <h1 class="title-large mb-5">THE STORY SO FAR</h1>
+                
+                <div style="max-width: 600px; margin: 0 auto;" class="story-sequence">
+                    <div class="story-item mb-5 fade-up">
+                        <h2 class="title-medium text-accent">1988</h2>
+                        <p class="text-body mt-2">The beginning.</p>
+                    </div>
+                    <div class="story-item mb-5 fade-up">
+                        <p class="text-body">Years passed.</p>
+                    </div>
+                    <div class="story-item mb-5 fade-up">
+                        <p class="text-body">Places changed.</p>
+                    </div>
+                    <div class="story-item mb-5 fade-up">
+                        <p class="text-body">People came and went.</p>
+                    </div>
+                    <div class="story-item mb-5 fade-up">
+                        <p class="text-body">And along the way, memories started to happen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05 - Our Story -->
+        <section id="section-our-story">
+            <div class="container text-center">
+                <div class="fade-up mb-5">
+                    <p class="text-body">A lot can change over the years.</p>
+                    <p class="text-body">But some people become part of the story.</p>
+                </div>
+                <h1 class="title-large mb-5 fade-up text-accent">OUR STORY</h1>
+                
+                <div class="img-wrapper mx-auto fade-up" style="max-width: 1000px; aspect-ratio: 16/9;">
+                    <img id="our-story-img" src="" alt="Our Story" loading="lazy">
+                </div>
+            </div>
+        </section>
+
+        <!-- 06 - Our Memories -->
+        <section id="section-memories" style="background-color: var(--bg-secondary);">
+            <div class="container text-center">
+                <h1 class="title-large mb-4">OUR MEMORIES</h1>
+                <p class="text-body mx-auto mb-5">Some moments are ordinary.<br>Some become memories.</p>
+                
+                <div class="editorial-grid" id="memories-grid">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 07 - Memory Wall (Moments) -->
+        <section id="section-moments">
+            <div class="container text-center">
+                <h1 class="title-large mb-5">MOMENTS</h1>
+                <div class="masonry-grid" id="masonry-wall">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 08 - Video Memories (Press Play) -->
+        <section id="section-videos" style="background-color: var(--bg-secondary); display: none;">
+            <div class="container text-center">
+                <h1 class="title-large mb-4">PRESS PLAY</h1>
+                <p class="text-body mx-auto mb-5">Some memories deserve to move.</p>
+                
+                <div id="video-grid" style="display: flex; flex-direction: column; gap: 4rem; align-items: center;">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 09 - The Good Times -->
+        <section id="section-good-times">
+            <div class="container text-center">
+                <h1 class="title-large mb-4 text-accent">THE GOOD TIMES</h1>
+                <p class="text-body mx-auto mb-5">The laughs.<br>The chaos.<br>The random moments.<br>The stories we'll probably never tell anyone. 😂</p>
+                
+                <div class="editorial-grid" id="good-times-grid">
+                    <!-- Populated via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 10 - 38 -->
+        <section id="section-38">
+            <div class="huge-number">38</div>
+            <div class="number-content container text-center">
+                <p class="title-medium">38 years of life.</p>
+                <p class="title-medium mt-2">Countless moments.</p>
+                <p class="title-medium mt-2">Hundreds of stories.</p>
+                <p class="title-medium mt-2 text-accent">And still so much more to come.</p>
+            </div>
+        </section>
+
+        <!-- 11 - Birthday Message -->
+        <section id="section-message" style="background-color: var(--bg-secondary);">
+            <div class="container">
+                <div class="message-container handwritten-style fade-up">
+                    <h1 class="title-medium mb-4 text-accent" style="font-family: var(--font-sans); text-transform: uppercase; font-style: normal;">DEAR MOHAMMED,</h1>
+                    <p>I am genuinely happy to celebrate your birthday.</p>
+                    <p>I appreciate the memories we've shared, and I truly appreciate having you as a friend.</p>
+                    <p>I hope the coming year brings you success, happiness, and everything you aim for.</p>
+                    <p>I hope there are many more adventures ahead of us.</p>
+                    <p>And I hope we continue creating memories together.</p>
+                    <br>
+                    <p style="color: var(--accent);">Happy 38th Birthday, Mohammed. ❤️</p>
+                    <p>Here's to many more memories.</p>
+                    <p class="text-right" style="margin-top: 2rem;">— Ahmed</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12 - One More Thing (Surprise) -->
+        <section id="section-surprise" style="min-height: 50vh;">
+            <div class="container text-center fade-up">
+                <h1 class="title-large mb-5">ONE MORE THING...</h1>
+                <button id="surprise-btn" class="btn">OPEN YOUR BIRTHDAY SURPRISE</button>
+            </div>
+        </section>
+
+        <!-- 12b - Reveal Sequence -->
+        <section id="section-surprise-reveal" style="display: none; height: 100vh; position: fixed; top: 0; left: 0; width: 100%; z-index: 998; justify-content: center; align-items: center; flex-direction: column;">
+            <h1 class="title-medium text-accent mb-2 fade-in-out">HAPPY BIRTHDAY</h1>
+            <h1 class="title-huge fade-in-out" style="animation-delay: 0.5s;">MOHAMMED</h1>
+            <h2 class="title-large text-accent fade-in-out" style="animation-delay: 1s;">38</h2>
+            <button id="continue-montage-btn" class="btn fade-in-out" style="margin-top: 2rem; animation-delay: 2.5s;">Continue</button>
+        </section>
+
+        <!-- 13 - Final Montage -->
+        <section id="section-montage" style="display: none; background: #000; padding: 0;">
+            <div id="montage-container" style="width: 100%; height: 100vh; position: relative; overflow: hidden;">
+                <!-- Fast images via JS -->
+            </div>
+        </section>
+
+        <!-- 14 - Final Message -->
+        <section id="section-final" style="display: none; background: var(--bg-primary);">
+            <div class="container text-center">
+                <div class="fade-up">
+                    <p class="title-medium mb-2">To more laughs.</p>
+                    <p class="title-medium mb-2">More adventures.</p>
+                    <p class="title-medium mb-2">More memories.</p>
+                    <p class="title-medium mb-5">More stories.</p>
+                </div>
+                
+                <h1 class="title-large text-accent mb-4 fade-up">TO BE CONTINUED...</h1>
+                <h2 class="title-medium mb-5 fade-up">CHAPTER 39 STARTS TODAY.</h2>
+                
+                <div class="mt-5 pt-5 border-t" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                    <p class="subtitle mb-2">13 • 09 • 2026</p>
+                    <p class="text-body">Happy Birthday, Mohammed.</p>
+                </div>
+            </div>
+        </section>
+
+    </div> <!-- End Main Content -->
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lb-close">&times;</button>
+        <button class="lightbox-prev" id="lb-prev">&#10094;</button>
+        <div class="lightbox-content">
+            <img id="lb-img" src="" alt="Memory">
+            <div class="lightbox-caption" id="lb-cap"></div>
+        </div>
+        <button class="lightbox-next" id="lb-next">&#10095;</button>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="video-modal">
+        <button class="video-modal-close" id="vm-close">&times;</button>
+        <video id="vm-video" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/data.js"></script>
+    <script type="module" src="js/components.js"></script>
+    <script type="module" src="js/animations.js"></script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
