@@ -2,6 +2,14 @@ import { siteData } from './data.js';
 
 // --- Media Renderers ---
 
+export function renderOpening() {
+    // Get a nice image of Ahmed and Mohammed (category: 'us')
+    const openingImage = siteData.images.find(img => img.category === 'us' && img.featured);
+    if (openingImage) {
+        document.getElementById('op-img').src = openingImage.url;
+    }
+}
+
 export function renderHero() {
     const heroImage = siteData.images.find(img => img.id === 'm-hero');
     if (heroImage) {

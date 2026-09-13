@@ -1,4 +1,5 @@
 import { 
+    renderOpening,
     renderHero, 
     renderManBehindMemories, 
     renderOurStory, 
@@ -21,6 +22,7 @@ import {
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Render all dynamic content
+    renderOpening();
     renderHero();
     renderManBehindMemories();
     renderOurStory();

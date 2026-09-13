@@ -99,8 +99,8 @@ export function playOpeningSequence(onComplete) {
       .to('#op-2', { opacity: 1, duration: 1.5 })
       .to('#op-2', { opacity: 0, duration: 1, delay: 1.5 })
       
-      .to('#op-3', { opacity: 1, scale: 1.1, duration: 2, ease: 'power3.out' })
-      .to('#op-3', { opacity: 0, duration: 1, delay: 1.5 })
+      .to('#op-3-container', { opacity: 1, scale: 1.05, duration: 2.5, ease: 'power3.out' })
+      .to('#op-3-container', { opacity: 0, duration: 1, delay: 2 })
       
       .to('#op-4', { opacity: 1, duration: 1.5 })
       .to('#op-4', { opacity: 0, duration: 1, delay: 1 })
