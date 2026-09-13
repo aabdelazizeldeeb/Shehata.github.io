@@ -29,7 +29,7 @@ export function renderManBehindMemories() {
         wrapper.dataset.speed = (Math.random() * 0.2 + 0.9).toFixed(2);
         
         wrapper.innerHTML = `
-            <img src="${img.url}" alt="Mohammed" loading="lazy" class="lightbox-trigger" data-id="${img.id}">
+            <img src="${img.url}" alt="Mohammed" loading="lazy" class="lightbox-trigger" data-id="${img.id}" onload="this.classList.add('loaded')">
         `;
         grid.appendChild(wrapper);
     });
@@ -71,7 +71,7 @@ export function renderOurMemories() {
         
         wrapper.innerHTML = `
             <div class="img-wrapper">
-                <img src="${img.url}" alt="Us" loading="lazy" class="lightbox-trigger" data-id="${img.id}">
+                <img src="${img.url}" alt="Us" loading="lazy" class="lightbox-trigger" data-id="${img.id}" onload="this.classList.add('loaded')">
             </div>
             ${img.caption ? `<p class="subtitle mt-2" style="font-size: 0.875rem;">${img.caption}</p>` : ''}
         `;
@@ -87,7 +87,7 @@ export function renderMasonryWall() {
     allImages.forEach(img => {
         const item = document.createElement('div');
         item.className = 'masonry-item fade-up';
-        item.innerHTML = `<img src="${img.url}" alt="Memory" loading="lazy" class="lightbox-trigger" data-id="${img.id}">`;
+        item.innerHTML = `<img src="${img.url}" alt="Memory" loading="lazy" class="lightbox-trigger" data-id="${img.id}" onload="this.classList.add('loaded')">`;
         grid.appendChild(item);
     });
 }
@@ -123,7 +123,7 @@ export function renderGoodTimes() {
         const rotation = (index % 2 === 0 ? 2 : -2) + 'deg';
         wrapper.style.transform = `rotate(${rotation})`;
         
-        wrapper.innerHTML = `<img src="${img.url}" alt="Good Times" loading="lazy" class="lightbox-trigger" data-id="${img.id}">`;
+        wrapper.innerHTML = `<img src="${img.url}" alt="Good Times" loading="lazy" class="lightbox-trigger" data-id="${img.id}" onload="this.classList.add('loaded')">`;
         grid.appendChild(wrapper);
     });
 }
